@@ -135,8 +135,11 @@
         }
 
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-            top: 8px;
+            transform: rotate(45deg);
+            top: 8.5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
         }
 
         .hamburger.active span:nth-child(2) {
@@ -144,14 +147,17 @@
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-            top: 8px;
+            transform: rotate(-45deg);
+            top: 8.5px;
+            left: 0;
+            width: 30px;
+            height: 3px;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0') no-repeat center/cover;
+            background: url('images/hero_background.png') no-repeat center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -288,6 +294,10 @@
             line-height: 1.6;
             color: #f5f5f5;
             overflow-wrap: break-word;
+        }
+
+        .tasting-content p, .private-dining-content p, .wine-cellar-content p {
+            margin-bottom: 40px;
         }
 
         /* Menu */
@@ -469,7 +479,9 @@
 
         .map-container {
             margin-top: 30px;
-            max-width: 100%;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1/1;
             border: 2px solid #e6b800;
             border-radius: 10px;
             overflow: hidden;
@@ -478,7 +490,7 @@
 
         .map-container iframe {
             width: 100%;
-            height: 400px;
+            height: 100%;
             border: none;
         }
 
@@ -532,7 +544,7 @@
 
         /* Parallax */
         .parallax {
-            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4') no-repeat center/cover;
+            background: url('images/parallax_background.png') no-repeat center/cover;
             height: 400px;
             background-attachment: fixed;
             background-size: cover;
@@ -715,8 +727,9 @@
                 padding: 12px;
             }
 
-            .map-container iframe {
-                height: 300px;
+            .map-container {
+                max-width: 300px;
+                aspect-ratio: 1/1;
             }
 
             .footer {
@@ -768,8 +781,9 @@
                 height: 80px;
             }
 
-            .map-container iframe {
-                height: 250px;
+            .map-container {
+                max-width: 250px;
+                aspect-ratio: 1/1;
             }
         }
     </style>
@@ -919,31 +933,31 @@
         <div class="gallery-content">
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Elegant dining area with luxurious decor" loading="lazy">
+                    <img src="images/gallery_image_1.png" alt="Elegant dining area with luxurious decor" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1555396273-36734d41d503" alt="Artfully presented gourmet dish" loading="lazy">
+                    <img src="images/gallery_image_2.png" alt="Artfully presented gourmet dish" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c" alt="Chef preparing a dish in the kitchen" loading="lazy">
+                    <img src="images/gallery_image_3.png" alt="Chef preparing a dish in the kitchen" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a596" alt="Selection of fine wines" loading="lazy">
+                    <img src="images/gallery_image_4.png" alt="Selection of fine wines" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" alt="Gourmet dessert with intricate plating" loading="lazy">
+                    <img src="images/gallery_image_5.png" alt="Gourmet dessert with intricate plating" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c" alt="Cozy restaurant ambiance with candlelight" loading="lazy">
+                    <img src="images/gallery_image_6.png" alt="Cozy restaurant ambiance with candlelight" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Freshly prepared seafood dish" loading="lazy">
+                    <img src="images/gallery_image_7.png" alt="Freshly prepared seafood dish" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519996529931-28324d5a630e" alt="Elegant table setting with fine dining ware" loading="lazy">
+                    <img src="images/gallery_image_8.png" alt="Elegant table setting with fine dining ware" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8" alt="Vibrant cocktail presentation" loading="lazy">
+                    <img src="images/gallery_image_9.png" alt="Vibrant cocktail presentation" loading="lazy">
                 </div>
             </div>
         </div>
@@ -978,7 +992,7 @@
             <p>Email: <a href="mailto:reservations@lecieletoile.com" style="color: #e6b800; text-decoration: none;">reservations@lecieletoile.com</a></p>
             <p>Phone: <a href="tel:+1234567890" style="color: #e6b800; text-decoration: none;">(123) 456-7890</a></p>
             <div class="map-container" role="region" aria-label="Restaurant location map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412657058884!2d-73.98713068459437!3d40.75889697932674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x8f2a67567e97a421!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2sus!4v1697051234567!5m2!1sen!2us" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412657058884!2d-73.98713068459437!3d40.75889697932674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x8f2a67567e97a421!2sTimes%20Square%2C%20New%20York%2C%20NY%2010036%2C%20USA!5e0!3m2!1sen!2us!4v1697051234567!5m2!1sen!2us" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
