@@ -348,9 +348,6 @@
         }
 
         .gallery-item {
-            overflow: hidden;
-            border-radius: 10px;
-            border: 1px solid rgba(230, 184, 0, 0.2);
             animation: luxuriousFadeIn 0.8s ease-out forwards;
         }
 
@@ -370,6 +367,9 @@
             aspect-ratio: 1/1;
             object-fit: cover;
             transition: transform 0.5s ease, filter 0.5s ease;
+            border: 1px solid rgba(230, 184, 0, 0.2);
+            border-radius: 10px;
+            display: block;
             loading: lazy;
             will-change: transform;
         }
@@ -707,6 +707,8 @@
                 max-width: 100px;
                 height: 100px;
                 aspect-ratio: 1/1;
+                border: 1px solid rgba(230, 184, 0, 0.2);
+                border-radius: 10px;
             }
 
             .reservation-form {
@@ -779,6 +781,8 @@
             .gallery-item img {
                 max-width: 80px;
                 height: 80px;
+                border: 1px solid rgba(230, 184, 0, 0.2);
+                border-radius: 10px;
             }
 
             .map-container {
