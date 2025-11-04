@@ -638,7 +638,7 @@
         .parallax {
             background: url('images/parallax_background.png') no-repeat center/cover;
             height: 400px;
-            background-attachment: fixed;
+            background-attachment: scroll;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -675,6 +675,7 @@
             font-family: 'Playfair Display', serif;
             color: var(--primary-color);
             padding: 0 15px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
         }
 
         @media (max-width: 768px) {
@@ -748,6 +749,17 @@
             .theme-container {
                 padding: 20px;
                 margin: 20px;
+            }
+
+            .parallax {
+                background-attachment: scroll;
+                height: 300px;
+            }
+            
+            .parallax h2 {
+                font-size: clamp(24px, 6vw, 36px);
+                padding: 0 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             }
         }
 
