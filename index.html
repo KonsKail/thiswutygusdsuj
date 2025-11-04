@@ -425,8 +425,9 @@
         .gallery-carousel {
             position: relative;
             max-width: 900px;
-            margin: 40px auto;
+            margin: 60px auto;
             overflow: hidden;
+            padding: 40px 0;
         }
 
         .carousel-container {
@@ -438,9 +439,10 @@
             display: flex;
             width: 100%;
             flex-shrink: 0;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
             align-items: center;
+            padding: 20px 0;
         }
 
         .square-displayer {
@@ -737,6 +739,11 @@
                 font-size: 16px;
             }
 
+            .gallery-carousel {
+                padding: 30px 0;
+                margin: 40px auto;
+            }
+
             .theme-container {
                 padding: 20px;
                 margin: 20px;
@@ -762,7 +769,11 @@
             }
 
             .carousel-slide {
-                gap: 10px;
+                gap: 15px;
+            }
+
+            .gallery-carousel {
+                padding: 20px 0;
             }
         }
     </style>
@@ -945,10 +956,10 @@
 
     <footer class="footer">
         <div class="social-icons">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Website"><i class="fas fa-globe"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Efood"><i class="fas fa-utensils"></i></a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.e-food.gr" target="_blank" aria-label="Efood"><i class="fas fa-utensils"></i></a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
         </div>
         <p>&copy; 2025 Le Ciel Étoilé. All rights reserved.</p>
     </footer>
@@ -960,6 +971,7 @@
         let currentPosition = 0;
         const totalImages = 9;
         const imagesPerView = 3;
+        let isAnimating = false;
 
         function setTheme(theme) {
             body.className = theme === 'default' ? '' : `theme-${theme}`;
@@ -1005,13 +1017,33 @@
         }
 
         function nextSlide() {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            const carouselContainer = document.getElementById('carouselContainer');
+            carouselContainer.style.transition = 'transform 0.5s ease';
+            
             currentPosition = (currentPosition + 1) % totalImages;
             updateCarousel();
+            
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
         }
 
         function prevSlide() {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            const carouselContainer = document.getElementById('carouselContainer');
+            carouselContainer.style.transition = 'transform 0.5s ease';
+            
             currentPosition = (currentPosition - 1 + totalImages) % totalImages;
             updateCarousel();
+            
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
         }
 
         themeBtn.addEventListener('click', openThemeMenu);
